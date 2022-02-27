@@ -229,3 +229,11 @@ a.button {
     padding: 0 8px;
   }
 }
+
+#myModal {
+  z-index: 100;
+}
+
+#myModalForm {
+  z-index: 100;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <title >Corona runner</title>
+    <title >Putin runner</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="index.js"></script>
@@ -14,6 +14,44 @@
     <div id="messageBox" class="sendmessage">
          <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;"></h1>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
+    </div>
+    <div id="welcome" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Welcome</h2>
+        </div>
+        <div class="modal-body">
+          <p>Your goal is to reach a form and successfully submit it. (Press space to play)</p>
+        </div>
+      </div>     
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>You are not done yet!</h2>
+          </div>
+          <div class="modal-body">
+            <p>You're your own competition. Close this box and keep trying...</p>
+          </div>
+        </div>      
+    </div>
+    <div id="myModalForm" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Congratulations!</h2>
+          </div>
+          <div class="modal-body">
+            <p>Click continue else it will keep getting harder...</p>
+          </div>
+          <div id="continue_btn">
+          </div>
+        </div>      
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
         <div id="main-content">
@@ -30,17 +68,62 @@
         </div>
         </div>
     </div>
+    <script type="module">
+
+      // Import the functions you need from the SDKs you need
+    
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+    
+      // TODO: Add SDKs for Firebase products that you want to use
+    
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+    
+      // Your web app's Firebase configuration
+    
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    
+      const firebaseConfig = {
+    
+        apiKey: "AIzaSyC8j6tqDXqlTVH0Cnx1AFJkRGcq3PGEagc",
+    
+        authDomain: "putin-runner-35e5f.firebaseapp.com",
+    
+        projectId: "putin-runner-35e5f",
+    
+        storageBucket: "putin-runner-35e5f.appspot.com",
+    
+        messagingSenderId: "52100862215",
+    
+        appId: "1:52100862215:web:33a3bef14211455f80b5a2",
+    
+        measurementId: "G-QHWC84CS34"
+    
+      };
+    
+    
+      // Initialize Firebase
+    
+      const app = initializeApp(firebaseConfig);
+    
+      const analytics = getAnalytics(app);
+    
+    </script>
     
 </body>
 
 <script>
-    document.onkeydown = function(evt) {
+  document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 32) {
-        var box = document.getElementById("messageBox");
-        box.style.visibility="hidden";
+      var box = document.getElementById("messageBox");
+      box.style.visibility="hidden";
     }
-};
-</script>
+  };
+  var welcome = document.getElementById("welcome");
+  welcome.style.display = "block";
 
+</script>
 </html>

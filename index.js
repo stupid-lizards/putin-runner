@@ -70,7 +70,7 @@ function firstModalClose() {
 
       this.distanceMeter = null;
       this.distanceRan = 0;
-      this.threshold = 2000;
+      this.threshold = 16800;
 
       this.highestScore = 0;
 
@@ -736,7 +736,7 @@ function firstModalClose() {
       } else {
         this.gameOverPanel.draw();
       }
-
+      
       if (this.distanceRan > this.threshold) {
         if (this.valid_attempt >= 1) {
           if (this.distanceRan > this.highestScore) {
